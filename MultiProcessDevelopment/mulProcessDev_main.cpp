@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testCreatProcess();
+    testExecFunction();
     return 0;
 }

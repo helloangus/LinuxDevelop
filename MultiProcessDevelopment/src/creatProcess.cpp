@@ -11,11 +11,11 @@ int testCreatProcess()
     if(pid > 0)
     {
         cout << "子进程的pid为：" << pid << endl;
-        cout << "这里是父进程，pid为" << getpid() << "ppid为" << getppid() << endl;
+        cout << "这里是父进程，pid为" << getpid() << " " << "ppid为" << getppid() << endl;
     }
     else if(pid == 0)
     {
-        cout << "这里是子进程，pid为" << getpid() << "ppid为" << getppid() << endl;
+        cout << "这里是子进程，pid为" << getpid() << " " << "ppid为" << getppid() << endl;
     }
     else
     {
