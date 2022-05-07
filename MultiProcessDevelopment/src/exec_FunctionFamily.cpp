@@ -4,9 +4,6 @@ using namespace std;
 
 int testExecFunction()
 {
-    char pwd[1024] = {0};
-    getwd(pwd);
-    cout << pwd << endl;
     // 先使用fork创建子进程，在子进程中调用exec函数族，
     // 运行对应的可执行程序，并覆盖当前进程的虚拟地址空间
     pid_t pid = fork();

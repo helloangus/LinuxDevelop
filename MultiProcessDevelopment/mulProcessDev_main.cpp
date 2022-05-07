@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testExecFunction();
+    testWaitFunc();
     return 0;
 }
