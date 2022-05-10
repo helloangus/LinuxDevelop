@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testWaitFunc();
+    testFifo();
     return 0;
 }
