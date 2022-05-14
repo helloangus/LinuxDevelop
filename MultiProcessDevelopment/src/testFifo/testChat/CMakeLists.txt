@@ -11,5 +11,5 @@ set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 
 include_directories(${PROJECT_SOURCE_DIR})
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
-add_executable(chatA.out chatA.cpp chatFunc.cpp)
-add_executable(chatB.out chatB.cpp chatFunc.cpp)
+add_executable(chatA.out chatA.cpp chatFunc.cpp mulChatFunc.cpp)
+add_executable(chatB.out chatB.cpp chatFunc.cpp mulChatFunc.cpp)

@@ -5,6 +5,6 @@ using namespace std;
 int main()
 {
     
-    chatFunc("fifoB2A", "fifoA2B", 1);
+    mulChatFunc("fifoB2A", "fifoA2B");
     return 0;
 }
