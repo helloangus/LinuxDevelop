@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testFifo();
+    testmmapFunc();
     return 0;
 }
