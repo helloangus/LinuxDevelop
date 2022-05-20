@@ -5,3 +5,7 @@ int testWaitFunc();
 int testPipe();
 int testFifo();
 int testmmapFunc();
+int testsignal();
+int testsignalprocmask();
+int testsigaction();
+int testsigchild();

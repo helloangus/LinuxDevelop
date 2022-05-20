@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testmmapFunc();
+    testsigchild();
     return 0;
 }
