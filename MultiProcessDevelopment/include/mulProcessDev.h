@@ -9,3 +9,4 @@ int testsignal();
 int testsignalprocmask();
 int testsigaction();
 int testsigchild();
+int testSHM();
