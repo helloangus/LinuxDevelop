@@ -12,3 +12,4 @@ include(CPack)
 
 
 add_subdirectory(MultiProcessDevelopment)
+add_subdirectory(MultiThreadDevelopment)

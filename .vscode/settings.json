@@ -1,8 +1,11 @@
 {
     "files.associations": {
-        "new": "cpp"
+        "new": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     },
     "cSpell.words": [
+        "MULTITHREADDEV",
         "testmmap",
         "testsigaction",
         "testsigchild",

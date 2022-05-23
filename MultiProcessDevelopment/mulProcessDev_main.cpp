@@ -4,6 +4,6 @@ using namespace std;
 
 int main()
 {
-    testDaemon();
+    testSHM();
     return 0;
 }
