@@ -8,5 +8,6 @@ int testmmapFunc();
 int testsignal();
 int testsignalprocmask();
 int testsigaction();
-int testsigchild();
+int testsigchild(); 
 int testSHM();
+int testDaemon();
