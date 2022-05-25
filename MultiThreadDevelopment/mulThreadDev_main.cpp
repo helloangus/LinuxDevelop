@@ -2,6 +2,6 @@
 
 int main()
 {
-    testThreadJoin();
+    testRwlock();
     return 0;
 }

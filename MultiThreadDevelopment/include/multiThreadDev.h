@@ -5,7 +5,8 @@
 using namespace std;
 int testThreadCreat();
 int testThreadJoin();
-
+int testSelTickets();
+int testRwlock();
 
 
 #endif
