@@ -3,7 +3,6 @@ using namespace std;
 #include <pthread.h>
 #include <string.h>
 #include <unistd.h>
-#include "multiThreadDev.h"
 
 int testNum = 99;
 void * callBackFunc(void *);

@@ -4,7 +4,6 @@ using namespace std;
 #include <pthread.h>
 #include <string.h>
 #include <unistd.h>
-#include "multiThreadDev.h"
 
 extern int testNum;
 

@@ -1,3 +1,7 @@
 # Custom Dictionary Words
+csem
+ctid
+Cust
+ptid
 rtid
 wtid

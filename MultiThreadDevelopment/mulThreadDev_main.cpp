@@ -2,6 +2,6 @@
 
 int main()
 {
-    testRwlock();
+    testSemaphore();
     return 0;
 }

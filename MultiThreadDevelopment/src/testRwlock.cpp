@@ -34,6 +34,7 @@ int testRwlock()
         {
             char * errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
+            return -1;
         }
     }
 
@@ -44,6 +45,7 @@ int testRwlock()
         {
             char * errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
+            return -1;
         }
     }
 
@@ -55,6 +57,7 @@ int testRwlock()
         {
             char * errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
+            return -1;
         }
     }
     
@@ -65,6 +68,7 @@ int testRwlock()
         {
             char * errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
+            return -1;
         }
     }
 
@@ -88,7 +92,7 @@ void * writeCallBackFunc(void * arg)
         usleep(1000);
     }
     
-    return 0;
+    return NULL;
 }
 
 
@@ -103,5 +107,5 @@ void * readCallBackFunc(void * arg)
     }
     
 
-    return 0;
+    return NULL;
 }
