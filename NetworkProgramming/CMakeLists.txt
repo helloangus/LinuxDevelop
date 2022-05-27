@@ -17,4 +17,4 @@ include_directories(${PROJECT_SOURCE_DIR}/include/)
 aux_source_directory(src DIRSRCS)
 add_executable(NetworkProgramming.out networkProgramming_main.cpp ${DIRSRCS})
 
-# add_subdirectory(src/testFifo)
+add_subdirectory(src/BaseTCPConnection)
