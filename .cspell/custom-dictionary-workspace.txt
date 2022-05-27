@@ -2,6 +2,7 @@
 csem
 ctid
 Cust
+NETWORKPROGRAMMING
 ptid
 rtid
 wtid
