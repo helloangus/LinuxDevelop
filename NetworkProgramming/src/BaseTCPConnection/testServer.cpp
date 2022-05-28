@@ -77,7 +77,7 @@ int main()
         }
         else
         {
-            cout << "Recv data: " << endl << recv_buf << endl;
+            cout << "Recv client data: " << endl << recv_buf << endl;
         }
 
         // 给客户端发送数据
