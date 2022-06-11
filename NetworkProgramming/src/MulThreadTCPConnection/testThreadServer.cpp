@@ -37,11 +37,21 @@ int main()
     }
 
     // 2、绑定用于监听的IP和端口号
+
+    // 设置监听端口复用
+    int sock_opt = 1;
+    int ret = setsockopt(lfd, SOL_SOCKET, SO_REUSEPORT, &sock_opt, sizeof(sock_opt));
+    if(ret == -1)
+    {
+        perror("setsockopt");
+        return -1;
+    }
+
     struct sockaddr_in lsa;
     lsa.sin_family = AF_INET;
     inet_pton(AF_INET, IP_addr, &lsa.sin_addr.s_addr);
     lsa.sin_port = htons(Port);
-    int ret = bind(lfd, (struct sockaddr *)&lsa, sizeof(lsa));
+    ret = bind(lfd, (struct sockaddr *)&lsa, sizeof(lsa));
     if(ret == -1)
     {
         perror("bind");
