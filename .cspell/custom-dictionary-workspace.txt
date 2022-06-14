@@ -2,6 +2,10 @@
 csem
 ctid
 Cust
+epev
+epevs
+epfd
+EPOLLIN
 NETWORKPROGRAMMING
 ptid
 rtid
