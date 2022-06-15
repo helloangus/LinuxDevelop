@@ -1,55 +1,49 @@
 #include <iostream>
 using namespace std;
 
-#include <arpa/inet.h>
 #include <unistd.h>
+#include <string.h>
+#include <arpa/inet.h>
 
 #define IP_addr "127.0.0.1"
-#define Port 9999
+#define Port 8888
 
 int main()
 {
+
     cout << "Client is running..." << endl;
 
-    // 1、创建套接字
-    int fd = socket(AF_INET, SOCK_STREAM, 0);
-    if(fd == -1)
+    // 1、创建一个通信用socket
+    int sfd = socket(PF_INET, SOCK_DGRAM, 0);
+    if(sfd == -1)
     {
         perror("socket");
         return -1;
     }
 
-    // 2、连接服务器
+    // 2、通信
+    char send_buf[BUFSIZ] = {""};
     struct sockaddr_in server_addr;
     inet_pton(AF_INET, IP_addr, &server_addr.sin_addr.s_addr);
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(Port);
-    int ret = connect(fd, (struct sockaddr *)&server_addr, sizeof(server_addr));
-    if(ret == -1)
-    {
-        perror("connect");
-        return -1;
-    }
-
-    // 3、通信（回射通信）
-    // 给服务器端发送数据
-    char send_buf[BUFSIZ] = {""};
+    socklen_t server_addr_len = sizeof(server_addr);
     while(true)
     {
         cout << "Input sending data: " << endl;
         fgets(send_buf, BUFSIZ, stdin);
         cout << endl;
-        write(fd, send_buf, BUFSIZ);
+        sendto(sfd, send_buf, sizeof(send_buf), 0, (struct sockaddr *)&server_addr, sizeof(server_addr));
 
         // 接收来自服务器端的数据
         char recv_buf[BUFSIZ] = {0};
-        ssize_t len = read(fd, recv_buf, BUFSIZ);
-        if(len == -1)
+        int recv_len = recvfrom(sfd, recv_buf, sizeof(recv_buf), 0, NULL, NULL);
+        if(recv_len == -1)
         {
-            perror("read");
+            perror("recvfrom");
             return -1;
         }
-        else if(len == 0)
+        else if(recv_len == 0)
         {
             // 服务器端断开连接
             cout << "Server closed." << endl;
@@ -62,8 +56,7 @@ int main()
    
     }
     
-    // 关闭连接
-    close(fd);
+    close(sfd);
 
     return 0;
 }
