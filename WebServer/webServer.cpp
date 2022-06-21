@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 #include "webServer.h"
 
 int main()

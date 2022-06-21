@@ -1,7 +1,10 @@
 #ifndef __LOCKER__
 #define __LOCKER__
 
-#include "define.h"
+#include <iostream>
+using namespace std;
+#include <exception>
+#include <semaphore.h>
 
 // 线程同步封装类
 
