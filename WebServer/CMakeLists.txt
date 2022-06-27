@@ -15,6 +15,4 @@ set(CMAKE_CXX_FLAGS -pthread)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
 include_directories(${PROJECT_SOURCE_DIR}/include/)
 aux_source_directory(src DIRSRCS)
-add_executable(WebServer.out webServer.cpp ${DIRSRCS})
-
-# add_subdirectory(src/BaseTCPConnection)
+add_executable(webServer_main.out webServer_main.cpp ${DIRSRCS})
