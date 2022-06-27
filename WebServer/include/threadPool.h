@@ -1,5 +1,6 @@
-#ifndef __THREADPOOL__
-#define __THREADPOOL__
+#ifndef __THREADPOOL_H__
+#define __THREADPOOL_H__
+
 
 #include <iostream>
 using namespace std;
@@ -14,7 +15,7 @@ template <typename T>
 class threadPool
 {
     public:
-        threadPool(int thread_num = 8, int max_requests = 1000);
+        threadPool(int, int);
         ~threadPool();
 
         // 添加任务
@@ -48,5 +49,6 @@ class threadPool
         bool m_stop;
 };
 
+#include "threadPool.cpp"
 
-#endif
+#endif // __THREADPOOL_H__

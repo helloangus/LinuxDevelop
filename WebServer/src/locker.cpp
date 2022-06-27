@@ -6,7 +6,7 @@ mutex :: mutex()
 {
     if(pthread_mutex_init(&m_mutex, NULL) != 0)
     {
-        throw exception();
+        throw "mutex() : pthread_mutex_init error";
     }
 }
 
@@ -39,7 +39,7 @@ cond :: cond()
 {
     if(pthread_cond_init(&m_cond, NULL) != 0)
     {
-        throw :: exception();
+        throw "cond() : pthread_cond_init error";
     }
 }
 
@@ -79,7 +79,7 @@ sem :: sem()
 {
     if(sem_init(&m_sem, 0, 0) != 0)
     {
-        throw exception();
+        throw "sem() : sem_init error";
     }
 }
 
@@ -87,7 +87,7 @@ sem :: sem(int num)
 {
     if(sem_init(&m_sem, 0, num) != 0)
     {
-        throw exception();
+        throw "sem() : sem_init error";
     }
 }
 

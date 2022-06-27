@@ -7,13 +7,13 @@ threadPool<T> :: threadPool(int thread_num, int max_requests) :
     // 非法数量，抛出异常
     if((thread_num <= 0) || (max_requests <= 0))
     {
-        throw exception();
+        throw "threadPool() : thread_num or max_requests is invalid";
     }
 
     m_threads = new pthread_t[m_thread_num];
     if(!m_threads)
     {
-        throw exception();
+        throw "threadPool() : new m_threads error";
     }
 
     // 创建m_thread_num个线程，并设置线程分离
@@ -27,7 +27,7 @@ threadPool<T> :: threadPool(int thread_num, int max_requests) :
             char *errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
             delete [] m_threads;
-            throw exception(); 
+            throw *errmsg; 
         }
         
         ret = pthread_detach(m_threads[i]);
@@ -36,7 +36,7 @@ threadPool<T> :: threadPool(int thread_num, int max_requests) :
             char *errmsg = strerror(ret);
             cout << "Error message: " << *errmsg << endl;
             delete [] m_threads;
-            throw exception();
+            throw *errmsg;
         }   
     } 
 }
