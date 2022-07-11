@@ -76,8 +76,8 @@ int main(int argc, char * argv[])
     int epoll_fd = epoll_create(5);
 
     // 将监听的文件描述符添加到epoll对象中
-    addFd(epoll_fd, listen_fd, false);
-    httpConn :: m_epoll_fd = epoll_fd;
+    addfd(epoll_fd, listen_fd, false);
+    httpConn :: m_epollfd = epoll_fd;
 
     // 循环监听
     while(true)
@@ -104,7 +104,7 @@ int main(int argc, char * argv[])
                     cerr << "Error message: " << strerror(errno) << endl;
                     continue;
                 }
-                if(httpConn :: m_usr_count >= MAX_FD)
+                if(httpConn :: m_user_count >= MAX_FD)
                 {
                     // 客户端连接数超过最大限制
                     // 给客户端发送错误信息
@@ -126,7 +126,7 @@ int main(int argc, char * argv[])
                     {
                         // 关闭连接
                         close(sockfd);
-                        clients[sockfd].closeConn();
+                        clients[sockfd].close_conn();
                     }
                     else
                     {
@@ -142,7 +142,7 @@ int main(int argc, char * argv[])
                     {
                         // 关闭连接
                         close(sockfd);
-                        clients[sockfd].closeConn();
+                        clients[sockfd].close_conn();
                     }
                     else
                     {
@@ -154,7 +154,7 @@ int main(int argc, char * argv[])
                 else if(events[i].events & (EPOLLERR | EPOLLHUP | EPOLLRDHUP))
                 {
                     // 处理客户端错误
-                    clients[sockfd].closeConn();
+                    clients[sockfd].close_conn();
                 }
             }
         }

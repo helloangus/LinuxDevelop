@@ -1,12 +1,16 @@
 # Custom Dictionary Words
+addfd
 connfd
 csem
 ctid
 Cust
+delfd
 epev
 epevs
 epfd
 EPOLLERR
+EPOLLET
+epollfd
 EPOLLHUP
 EPOLLIN
 EPOLLONESHOT
@@ -14,9 +18,13 @@ EPOLLOUT
 EPOLLRDHUP
 HTTPCONN
 HTTPCONNECTION
+modfd
 NETWORKPROGRAMMING
 ptid
+removefd
+REQUESTLINE
 rtid
+setnonblocking
 SIGPIE
 THREADPOLL
 THREADPOOL
